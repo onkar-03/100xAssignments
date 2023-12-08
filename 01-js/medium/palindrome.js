@@ -4,7 +4,23 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  if (!str?.length) {
+    return true;
+  } else {
+    let orgStr = str.replace(/[^a-zA-Z\s]/g, "").toLowerCase();
+    orgStr = orgStr?.toLowerCase()?.split(" ")?.join("");
+    console.log(orgStr);
+    let reverseStr = orgStr?.split("")?.reverse()?.join("");
+    console.log(reverseStr);
+
+    if (reverseStr == orgStr) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
+
+isPalindrome("Eva, can I see bees in a cave?");
 
 module.exports = isPalindrome;

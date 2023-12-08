@@ -6,7 +6,27 @@
 */
 
 function countVowels(str) {
-    // Your code here
+  if (!str) {
+    return 0;
+  } else {
+    let vowels = ["e", "i", "o", "u", "a"];
+    count = 0;
+    let tempStr = str
+      ?.toLowerCase()
+      ?.replace(/[^a-z\s]/g, "")
+      ?.split("");
+    tempStr.forEach((ltr) => {
+      let idx = vowels.findIndex((vwls) => vwls == ltr);
+      console.log(vowels);
+      if (idx != -1) {
+        count = count + 1;
+      }
+    });
+
+    return count;
+  }
 }
+
+console.log(countVowels("EaSiEr"));
 
 module.exports = countVowels;
